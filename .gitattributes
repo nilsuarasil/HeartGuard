@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# ── Git LFS – Büyük Binary Model Dosyaları ────────────────────────────────────
+# Kurulum: https://git-lfs.github.com/
+# İlk kez: git lfs install
+# Mevcut büyük dosyaları taşımak için:
+#   git lfs migrate import --include="*.h5,*.tflite,*.pkl" --everything
+*.h5    filter=lfs diff=lfs merge=lfs -text
+*.tflite filter=lfs diff=lfs merge=lfs -text
+*.pkl   filter=lfs diff=lfs merge=lfs -text

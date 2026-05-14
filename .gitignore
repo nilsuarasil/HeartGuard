@@ -1,0 +1,37 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Sanal Ortam ───────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Büyük Veri Dosyaları (Lisans & Dağıtım Riski) ────────────────────────────
+# PTB-XL metadata CSV (~6.3 MB) – PhysioNet'ten indirin:
+# https://physionet.org/content/ptb-xl/1.0.3/
+ptbxl_database.csv
+
+# ── Model Binary Dosyaları (Git LFS ile yönetilmeli) ──────────────────────────
+# Git LFS kurulduktan sonra: git lfs migrate import --include="*.h5,*.tflite,*.pkl"
+models/*.h5
+models/*.tflite
+models/*.pkl
+
+# ── IDE & OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# ── Üretilen Grafikler / Çıktılar ─────────────────────────────────────────────
+ekg_grafikleri/*.png
+ekg_grafikleri/*.jpg

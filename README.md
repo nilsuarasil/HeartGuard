@@ -39,14 +39,36 @@ Projenin yapay zeka modelleri ve canlı testleri, dünyaca kabul görmüş klini
 - Python 3.8+
 - Gerekli kütüphaneleri yüklemek için:
   ```bash
-  pip install numpy pandas tensorflow wfdb scikit-learn matplotlib joblib
+  pip install -r requirements.txt
   ```
+  > `tensorflow` yalnızca modeli sıfırdan eğitmek için gereklidir.
+  > Dashboard (`main.py`) TensorFlow bağımlılığı olmadan çalışır.
+
+### 📁 Büyük Dosyalar Hakkında (Önemli)
+
+**`ptbxl_database.csv`** bu repoda bulunmaz (lisans ve boyut nedeniyle `.gitignore`'da).
+Eğitim için PhysioNet'ten indirin:
+```
+https://physionet.org/content/ptb-xl/1.0.3/
+```
+
+**Model dosyaları** (`models/*.h5`, `*.tflite`, `*.pkl`) Git LFS ile yönetilmelidir.
+İlk kez:
+```bash
+git lfs install
+git lfs migrate import --include="*.h5,*.tflite,*.pkl" --everything
+```
 
 ### Kullanım
 
 TFLite yapay zeka modelini baştan eğitmek ve kaydetmek için (Opsiyonel):
 ```bash
 python train_ptbxl_model.py
+```
+
+RF (Vital Bulgular) modelini eğitmek için:
+```bash
+python train_rf_model.py
 ```
 
 EKG analiz ve klinik arayüzü (Dashboard) çalıştırmak için:

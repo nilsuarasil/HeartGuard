@@ -1,0 +1,19 @@
+# HeartGuard – Bağımlılık Listesi
+# Kurulum: pip install -r requirements.txt
+
+# ── Temel Bilimsel Kütüphaneler ───────────────────────────────────────────────
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+
+# ── EKG / Fizyonet Kütüphanesi ────────────────────────────────────────────────
+wfdb>=4.1
+
+# ── Makine Öğrenmesi ──────────────────────────────────────────────────────────
+scikit-learn>=1.3
+joblib>=1.3
+
+# ── Derin Öğrenme (Yalnızca train_ptbxl_model.py için gerekli) ────────────────
+# Dashboard (main.py) TensorFlow kullanmaz – istatistiksel anomali tespiti yapar.
+# Modeli sıfırdan eğitmek istiyorsanız aşağıdaki satırı açın:
+# tensorflow>=2.13
